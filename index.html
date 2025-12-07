@@ -1,0 +1,1457 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="index_files/libs/clipboard/clipboard.min.js"></script>
+<script src="index_files/libs/quarto-html/tabby.min.js"></script>
+<script src="index_files/libs/quarto-html/popper.min.js"></script>
+<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="index_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.8.25">
+
+  <meta name="author" content="Isabel Zimmerman | Posit, PBC">
+  <title>A toolkit for building and using tools</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="index_files/libs/revealjs/dist/theme/quarto-534cd8e3a96973385dffff3f4709048d.css">
+  <link rel="stylesheet" href="style.css">
+  <link href="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="index_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">A toolkit for building and using tools</h1>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Isabel Zimmerman | Posit, PBC 
+</div>
+</div>
+</div>
+
+</section>
+<section id="welcome" class="title-slide slide level1 center" data-background-image="images/base.JPG">
+<h1>Welcome!</h1>
+<aside class="notes">
+<p>i am someone who has spent time building models</p>
+<p>first full time python open source hire at Posit, when it was still called RStudio. We actually had folks building Python tools, but I was the first one dedicated SOLELY to novel Python work, particularly mlops python packages.</p>
+<p>i am a full time software engineer building python packages as well as python experiences inside IDEs, but i am also someone who enjoys doing things like this, being able to share my work with others, through a blog post or a conference talk.</p>
+<p>huge reader, coming to boston from a fantasy book convention in utah</p>
+<p>i love fantasy books because there’s usually a villain, a hero, and some sort of magic involved in the story. i also love a magical item that seems to solve every problem!</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+
+<section>
+<section id="why-should-you-care-about-tools" class="title-slide slide level1 center">
+<h1>Why should you care about tools?</h1>
+<aside class="notes">
+<p>pydata folks</p>
+<p>i assume you’re here as someone cares about or uses Python, cares about or uses data, or some venn diagram overlap of these two.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="why-should-you-care-about-tools-1" class="slide level2">
+<h2>Why should you care about tools?</h2>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href=""></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href=""></a>x <span class="op">=</span> pd.DataFrame(mydata)</span>
+<span id="cb1-3"><a href=""></a></span>
+<span id="cb1-4"><a href=""></a><span class="im">import</span> polars <span class="im">as</span> pl</span>
+<span id="cb1-5"><a href=""></a>x <span class="op">=</span> pl.DataFrame(mydata)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<aside class="notes">
+<p>The villain in the tool-user story is the inertia of using the same tool because you’re used to it, and I think this talk does a good job of</p>
+<p>I’d like to convince you to try something new thoughtfully</p>
+<p>Is there some aspect of thoughtfully PICKING tools.</p>
+<p>tool user, choosing the right one</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="why-should-you-care-about-tools-2" class="slide level2">
+<h2>Why should you care about tools?</h2>
+<div class="fragment">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href=""></a><span class="ex">gti</span> push</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<aside class="notes">
+<p>“Even heroes typo their incantations”</p>
+<p>barrier to entry is way lower with AI</p>
+<p>by building a tool for yourself better results speed up future work</p>
+<p>enables everyone to be</p>
+<p>maybe you don’t identify immediately as a tool builder!</p>
+<p>i’d like to convince you otherwise.</p>
+<p>a tool is anything i use for a specific task to get something done</p>
+<p>i am a book nerd, and rebind books as well.</p>
+<p>i have a tool that i have created just for me</p>
+<ul>
+<li>this is also a good tool!</li>
+</ul>
+<p>i use an IDE as a tool to help me write code by adding a GUI and other affordances to make it a good experience</p>
+<p>i use a python package as a tool</p>
+<p>i use the python language as a tool to build a package</p>
+<p>everyone sits somewhere on the spectrum of building and consuming tools.</p>
+<p>if you’re writing code, you’re building something. you might be building a dashboard, a report, an internal or external tool, or something else entirely.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
+</section></section>
+<section>
+<section id="making-tools" class="title-slide slide level1 center" data-background-image="images/bag.JPG">
+<h1>Making tools</h1>
+<aside class="notes">
+<p>When I transitioned from data scientist to tool builder, I thought I knew what mattered. I had the technical skills - I could write clean code, design APIs, optimize performance. I thought: “If it works, people will use it.”</p>
+<p>We do a fair amount of user testing where we watch someone use Positron to understand how folks interact with our product.</p>
+<p>I’ve watched people who are really brilliant get stuck because a button that refreshed buttons only</p>
+<p>People will get stuck. Not because the code was broken - it worked as I expected it to. They got stuck because they couldn’t find the button. Or the error message was confusing. Or it didn’t fit into their workflow.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="skill-types" class="slide level2">
+<h2>Skill types</h2>
+<div class="fragment">
+<ul>
+<li class="fragment">“hard” skills: the computer elements
+<ul>
+<li class="fragment">modularity, portability, flexibility</li>
+</ul></li>
+<li class="fragment">“soft” skills: the human elements
+<ul>
+<li class="fragment">knowing your user, understanding needs, delighting in the small things, explaining your work</li>
+</ul></li>
+</ul>
+<aside class="notes">
+<p>When we think about skills on a resume, we often categorize them as hard or soft skills.</p>
+<p>Hard skills are thing like: I can use scikit learn to build a model. I can write C++ code. Soft skills are things like: communication or public speaking.</p>
+<p>Now there is a lot of baggage around the terms “hard” and “soft” skills as one side or another comes into style. Some years, LinkedIn says soft skills are all you need, and then other years, soft skills are no longer needed.</p>
+<p>I’m going to ask you today to put the discourse around these terms aside for a moment. I’m not interested in trying to convince you of one or the other is better, but look at the dicotomy of different ways of working.</p>
+<p>Really, I was thinking a lot about how to frame different ways to build tools and how to think of what is important. That’s when I realized: there are two types of skills in tool building.</p>
+<p>Hard skills - these are the technical foundations. Modularity, so your tool plays well with others. Reproducibility, so things work consistently. Structure, so your code is maintainable. These skills get your tool to work.</p>
+<p>Soft skills - these are the human elements. Knowing your audience. Highlighting what people actually use. Letting little improvements have big impact. These skills get people to love your tool.</p>
+<p>Here’s the thing: you need both.</p>
+<p>A tool with only hard skills is like a perfectly engineered car with no steering wheel. It works, but good luck using it.</p>
+<p>A tool with only soft skills is like a beautiful website that crashes when you click anything. It delights, until it doesn’t.</p>
+<p>Today, we’re going to explore both. Because the best tools - the ones that actually make data work better - nail both the technical foundation AND the human experience.</p>
+<p>Let’s start with the hard skills</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
+</section></section>
+<section id="a-tools-hard-skills-the-technical-side" class="title-slide slide level1 center">
+<h1>A tool’s hard skills (the technical side)</h1>
+<aside class="notes">
+<p>thinking about best practices of tools, helps to start with the</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+
+<section>
+<section id="modularity" class="title-slide slide level1 center">
+<h1>1. Modularity</h1>
+<aside class="notes">
+<ul>
+<li>when you build tools, build them from things that are known/scale</li>
+<li>finding tools that work with what you already know</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+
+<img data-src="images/astropy.png" class="quarto-figure quarto-figure-center r-stretch"><aside class="notes">
+<p>now, this is a talk about tools, so its only fair to introduce the tool im currently working on, which is called Positron</p>
+<p>Positron</p>
+<ul>
+<li><p>IDE built specifically for data science</p></li>
+<li><p>includes things like positron vscode fork</p></li>
+<li><p>that’s nice, but important bc modularity gives users the ability to build the tool they <em>really</em> need</p></li>
+<li><p>gives users the ability to grow with the tool you’ve built</p></li>
+<li><p>OpenVSX extensions, which means everyone’s Positron looks a little different</p></li>
+</ul>
+<p>For tool builders:</p>
+<p>Expose clear interfaces/APIs Make components swappable</p>
+<p>For tool users:</p>
+<p>Look for tools that play well with your existing stack Prefer tools with clear extension points</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section>
+<section id="portability" class="title-slide slide level1 center">
+<h1>2. Portability</h1>
+<aside class="notes">
+<p>ARTIFACT: The Waypoint Stones (Cross-platform compatibility)</p>
+<p><em>Place these markers and teleport your work anywhere</em></p>
+<p>does this code give you output that works in many places?</p>
+<p>this</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="portability-quarto" class="slide level2">
+<h2>Portability: Quarto</h2>
+<p>{{ screenshot of quarto in rstudio/vscode/positron side by side}}</p>
+<aside class="notes">
+<p>Example: Quarto works with Jupyter, VS Code, RStudio, Positron</p>
+<p>Doesn’t lock you into one ecosystem</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="portability-data-explorer" class="slide level2">
+<h2>Portability: Data Explorer</h2>
+
+<img data-src="images/convert-to-code.gif" class="quarto-figure quarto-figure-center r-stretch"><aside class="notes">
+<p>big emphasis on a first-in-class data explorer</p>
+<p>astounding technical feat</p>
+<p>able to convert filters to code at the click of a button</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section>
+<section id="flexibility" class="title-slide slide level1 center" data-background-image="images/swiss-army-wand.JPG">
+<h1>3. Flexibility</h1>
+<aside class="notes">
+<p>ARTIFACT: The Swiss Army Wand (over-flexible tools)</p>
+<p><em>Has attachments for everything: stirring, cutting, measuring, divining</em></p>
+<ul>
+<li>a swiss army knife is convenient, but it is not a replacement for a toolkit</li>
+<li>it’s helpful to have a swiss army tool for quick tasks.</li>
+<li>im pro swiss army knife, but you’re not going to build a house with one</li>
+</ul>
+<p>so what sort of flexibility works well?</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="flexibility-1" class="slide level2">
+<h2>Flexibility</h2>
+<blockquote>
+<p><em>Simple is better than complex.</em> <em>Complex is better than complicated.</em> - Zen of Python</p>
+</blockquote>
+<aside class="notes">
+<p>now, i know this slide says flexibility, and i really want to encourage that!</p>
+<ul>
+<li>as i started to build tools, i wanted everything to support everything if i was typing an argument, i would be creating crazy unions to support pandas dataframes, polars dataframes, lists, dictionaries, tuples, <em>all of it</em></li>
+</ul>
+<p>if you have something accept complex inputs, it’s going to be way harder to also support complex tasks.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="flexibility-positron-assistant" class="slide level2">
+<h2>Flexibility: Positron Assistant</h2>
+<div class="fragment">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="images/positron-assistant.gif" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+<aside class="notes">
+<p>ai often does not have the right context for good data science work</p>
+<p>my team built positron assistant and databot in order to give things like users namespace in a jupyter notebook, data snippets, plot images, etc, in order to get the most out of your AI for data experience</p>
+<p>happy path/normal path: give users clear overview that x, y, z is included in the prompt</p>
+<p>clear way to remove/add context.</p>
+<p>BUT start from a happy path and give users</p>
+<p>AI tools i think have really highlighted the importance of starting with a reasonable amount of context but letting users configure more or less information.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</div>
+</section></section>
+<section id="modularity.-portability.-flexibility." class="title-slide slide level1 center">
+<h1>Modularity. Portability. Flexibility.</h1>
+<aside class="notes">
+<p>three virtues of a good tool</p>
+<p>but there’s one thing that we haven’t talked about that is front of mind for everyone these days</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+
+<section>
+<section id="the-era-of-ai-everything" class="title-slide slide level1 center">
+<h1>2025: the era of AI everything</h1>
+<aside class="notes">
+<p>AI excels with well-structured, modular code (hard skills)</p>
+<p>Your code will be read by AI assistants</p>
+<p>strong hard skills make it easy for AI to understand your intent</p>
+<p>AI is also very good at fixing the “hard skills”</p>
+<p>But AI struggles without context about what users actually need (soft skills)</p>
+<p>Building great tools requires both: technical excellence + user empathy</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="the-era-of-ai-everything-1" class="slide level2">
+<h2>2025: the era of AI everything</h2>
+
+<img data-src="images/mostly_ai.png" class="quarto-figure quarto-figure-center r-stretch"><div class="footer">
+<p>https://survey.stackoverflow.co/2025/ai#developer-tools-ai-tool</p>
+</div>
+<aside class="notes">
+<p>Developers show the most resistance to using AI for high-responsibility, systemic tasks like Deployment and monitoring (76% don’t plan to) and Project planning (69% don’t plan to).</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="the-era-of-ai-everything-2" class="slide level2">
+<h2>2025: the era of AI everything</h2>
+
+<img data-src="images/dont_plan_to_use_ai.png" class="quarto-figure quarto-figure-center r-stretch"><div class="footer">
+<p>https://survey.stackoverflow.co/2025/ai#developer-tools-dont-plan-to-use-ai-for-this-task</p>
+</div>
+<aside class="notes">
+<p>Developers show the most resistance to using AI for high-responsibility, systemic tasks like Deployment and monitoring (76% don’t plan to) and Project planning (69% don’t plan to).</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section id="a-tools-soft-skills-the-human-side" class="title-slide slide level1 center">
+<h1>A tool’s soft-skills (the human side)</h1>
+<aside class="notes">
+<p><em>The human elements that make tools delightful</em></p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+
+<section>
+<section id="know-your-users" class="title-slide slide level1 center">
+<h1>1. Know your users</h1>
+<aside class="notes">
+<p>ARTIFACT: The Empathy Mirror (user research)</p>
+<p>Shows you the struggles of other wizards</p>
+<ul>
+<li>understand the struggles of data scientists bc a lot of us were data scientists</li>
+</ul>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="know-your-users-1" class="slide level2">
+<h2>Know your users</h2>
+<ul>
+<li>Data scientists: experimentation, exploration, iteration</li>
+<li>Software engineers: driven by a certain outcome</li>
+</ul>
+<aside class="notes">
+<p>data work inherently looks a little different than what we would consider a software engineer to work</p>
+<p>data is highly driven by exploration, experiments, iteration, exploring uncharted territories</p>
+<p>software engineering is highly driven by structure, perhaps a certain outcome (like a new button, etc)</p>
+<p>Data practitioners explore uncharted territories (iteration, experimentation), while software engineers build fortresses in known lands (structure, specific outcomes). You wouldn’t give a cartographer a mason’s tools. The permanent console is like having a magical campfire that’s always burning—a place to test spells and try new incantations safely.</p>
+<p>which means a tool that is built for a saoftware engineer might not be the best fit for someone who needs to do lots of exploring like a data scientist</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="know-your-users-console" class="slide level2">
+<h2>Know your users: console</h2>
+
+<img data-src="images/console.gif" class="r-stretch"><aside class="notes">
+<p>one way we really wanted to show data scientists that we care is by having a permanent console in Positron.</p>
+<p>This is a place where you can send code to be executed; if you’re not familiar with having an IPython console, you can kind of think of having a Jupyter Notebook lite.</p>
+<p>You can use keyboard shortcuts like command or control enter to send code from a python script directly to the console, which allows you to</p>
+<p>there is also jupyter notebook support, but this dedicated area is highly flexible to work with python scripts, quarto documents, etc</p>
+<p>not only was it important to have an iterable console, we also made edits to the LSP (how your IDE is able to do things like give code completions and syntax highlighting)</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section>
+<section id="understand-what-gets-used-highlight-that" class="title-slide slide level1 center" data-background-image="images/lantern.png">
+<h1>2. Understand what gets used, highlight that</h1>
+<aside class="notes">
+<p>ARTIFACT: The Path-Illuminating Lantern (discoverability)</p>
+<p>Shines light on the trails most traveled</p>
+<p>honestly all other subsets of soft skills sort of fall out of the idea of knowing your users</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="understand-what-gets-used" class="slide level2">
+<h2>Understand what gets used</h2>
+<ul>
+<li>Builders: bring to the front the things that frequently used</li>
+<li>Users: find the tool that works best with your usual path</li>
+</ul>
+<aside class="notes">
+<p>disocverability is hard! on documentation, in the actual API, in the UI</p>
+<p>documentation helps! but it can be equally important to have self-documenting things.</p>
+<p>information is hard to find and retain, so the</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="quarto-simple-buttons" class="slide level2">
+<h2>Quarto: simple buttons</h2>
+<aside class="notes">
+<ul>
+<li><p>things that are high impact but hard to find (render on save was deep in settings)</p></li>
+<li><p>things that are constantly used</p></li>
+<li><p>what do users care about, how can you help them find the things that are not immediately obvious</p></li>
+</ul>
+<p>Discoverability is the eternal quest. Hidden features are like secret passages—even if they lead to treasure, they’re useless if no one finds them. “Render on save” was a legendary artifact buried in a settings dungeon; bringing it to the surface makes it actually usable.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section>
+<section id="let-little-things-have-big-impact" class="title-slide slide level1 center" data-background-image="images/salve.png">
+<h1>3. Let little things have big impact</h1>
+<aside class="notes">
+<p>ARTIFACT: The Papercut Healing Salve (small improvements)</p>
+<p>Death by a thousand papercuts is still death Each tiny improvement is a drop of healing potion</p>
+<p>i would love to do that, but how can i even find the little things?</p>
+<p>do painful things, often</p>
+<ul>
+<li>great way to learn to do hard things</li>
+<li>great way to discover how to make things simpler</li>
+<li>Quarto: open source authoring</li>
+<li>how i made these slides, my website, dashboards</li>
+<li>highlighting the things that are</li>
+</ul>
+<p>not something that is obviously painful, but death by 100000 papercuts</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="big-impact-keyboard-shortcuts" class="slide level2">
+<h2>Big impact: keyboard shortcuts</h2>
+<p>{{adding in jupyter keyboard shortcuts}}</p>
+</section>
+<section id="big-impact-run-script" class="slide level2">
+<h2>Big impact: run script</h2>
+
+<img data-src="images/run-in-terminal.png" class="r-stretch"><aside class="notes">
+<p>normal python file</p>
+<p>runs in terminal like python filename.py etc</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="big-impact-run-script-1" class="slide level2">
+<h2>Big impact: run script</h2>
+
+<img data-src="images/run-app.png" class="r-stretch"><aside class="notes">
+<p>runs app according to framework like streamlit run appname</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section>
+<section id="explain-your-work" class="title-slide slide level1 center" data-background-image="images/crow.JPG">
+<h1>4. Explain your work</h1>
+<aside class="notes">
+<p>ARTIFACT: The Whispering Familiar (help pane)</p>
+<p>Perches on your shoulder, wise and patient</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="explain-your-work-1" class="slide level2">
+<h2>Explain your work</h2>
+<div class="r-fit-text">
+<blockquote>
+<p>If the implementation is hard to explain, it’s a bad idea. - Zen of Python</p>
+</blockquote>
+</div>
+<aside class="notes">
+<p>try to explain it. if you struggle to explain, probably a good signal that it can be confusing to users as well!</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="explain-your-work-2" class="slide level2">
+<h2>Explain your work</h2>
+
+<img data-src="images/bluesky.jpeg" class="quarto-figure quarto-figure-center r-stretch"><aside class="notes">
+<p>now, the original context of this is literary, but i think its really a helpful framing</p>
+<p>if you’re documenting your function by adding types</p>
+<p>if you’re adding docstrings to functions</p>
+<p>if you’re</p>
+<p>all of this helps give your users (including yourself) better information when you’re using a tool</p>
+<p>The help pane is like having a wise familiar perched on your shoulder, ready to whisper the secrets of any incantation you point at. Writing for AI is like leaving notes for a very literal apprentice who will take you absolutely seriously.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="explain-your-work-help-pane" class="slide level2">
+<h2>Explain your work: help pane</h2>
+
+<img data-src="images/help-pane.gif" class="quarto-figure quarto-figure-center r-stretch"><aside class="notes">
+<p>the hard part is sometimes surfacing this information later.</p>
+<p>Something we really wanted to focus on is bringing rich api documentation closer to users, so they don’t have to leave the IDE to find information they need (and that probably they already have, it’s just hard to find!)</p>
+<p>we built out a help pane, that has navigation, rich highlighting, linked docs.</p>
+<p>so users can just write their function or object name with a question mark in the console and immediately see information they need.</p>
+<p>helps users, helps builders by narrowing the feedback loop between the two</p>
+<p>support numpy, sphinx, google, and epytext style docstrings</p>
+<p>docs are a good place to write things down, but sometimes it feels like too formal of a place to add brainstorming or half baked explanations</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="explain-your-work-to-robots" class="slide level2">
+<h2>Explain your work (to robots)</h2>
+
+<img data-src="images/claude-md.png" class="quarto-figure quarto-figure-center r-stretch"><aside class="notes">
+<p>sometimes this doesn’t seem to be a good fit for documentation, i just want to brain dump things to help me sort out my own thoughts about it.</p>
+<p>luckily, we are now not only writing documentation for humans but also for robots, and robots are pretty good at helping connect the dots</p>
+<p>ive also found this to be a great maintenance task to create CLAUDE.md or other documentation for LLMs to consume.</p>
+<p>Not just for AI - helps you when you return to projects Forces you to articulate design decisions Makes you want to write more docs! Practical tip: When building, write docs as if explaining to an AI assistant</p>
+<p>What’s the purpose of this function? What are the gotchas? What’s the happy path?</p>
+<p>doesnt have to be as polished as public documentation, but still beneficial to me if i leave a project and come back to it to help get me back up to speed</p>
+<blockquote>
+<p>release early, release often</p>
+</blockquote>
+<blockquote>
+<p>share early, share often</p>
+</blockquote>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section></section>
+<section id="holistic-tools" class="title-slide slide level1 center">
+<h1>Holistic tools</h1>
+
+</section>
+
+<section id="a-mission-to-have-beautiful-tools" class="title-slide slide level1 center" data-background-image="images/tools.JPG">
+<h1>A mission to have beautiful tools</h1>
+<aside class="notes">
+<p>ARTIFACT: The Mission Compass (Posit’s philosophy)</p>
+<p>Always points toward “beautiful tools”</p>
+<p>caring deeply about the input and output of your work</p>
+<p>willing to take on complexity to make a user’s life easier</p>
+<p>literally on our about page!</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+
+<section id="feedback-loops" class="title-slide slide level1 center" data-background-image="images/oroborus.JPG">
+<h1>Feedback loops</h1>
+<aside class="notes">
+<p>ARTIFACT: The Feedback Loop Ouroboros (continuous improvement)</p>
+<p>A serpent eating its tail, endlessly cycling</p>
+<p>Use tools → Notice pain points → Build better tools → Share with others This is how the ecosystem improves You’re both a consumer and contributor Your unique perspective matters</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+
+<section id="your-most-powerful-tool-your-voice" class="title-slide slide level1 center">
+<h1>Your most powerful tool: your voice!</h1>
+<aside class="notes">
+<p>ARTIFACT: The Voice Amplification Horn Blog posts become battle cries</p>
+<p>Blog posts, conference talks, GitHub issues, linkedin posts Sharing what works (and what doesn’t) helps everyone Your feedback makes tools better Your tools make others’ work better This is the adventure: The continuous cycle of building and using</p>
+<p>Every great tool starts as someone’s story of frustration and triumph. When you write that blog post or file that GitHub issue, you’re not just complaining—you’re adding verses to the collective epic. Future tool-builders will sing your songs (read your posts) and build better magic because you shared your journey.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+
+<section>
+<section id="building-your-toolkit" class="title-slide slide level1 center" data-background-image="images/bag.JPG">
+<h1>Building your toolkit</h1>
+<aside class="notes">
+<ul>
+<li>Start with modular, composable tools</li>
+<li>Pay attention to what delights you (and what frustrates you)</li>
+<li>Your toolkit should evolve as you do</li>
+<li>You’re not building for everyone - build for someone</li>
+<li>Every delightful moment counts</li>
+<li>Small improvements compound over time</li>
+</ul>
+<p>if i was getting into the business of making cheesy motivational posters for data folks, i’d probably start here.</p>
+<p>Building tools isn’t about reaching a final destination (the perfect IDE, the ultimate package). It’s about the hero’s journey that never ends—using tools reveals what’s needed, building reveals what’s possible, and sharing starts the cycle anew.</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="what-makes-tools-stick" class="slide level2">
+<h2>What makes tools stick?</h2>
+<p>Not perfection, but:</p>
+<ol type="1">
+<li>Solving a real problem (hard skills)</li>
+<li>Making the experience enjoyable (soft skills)</li>
+<li>Deep caring for users (mission)</li>
+</ol>
+</section>
+<section id="thank-you" class="slide level2">
+<h2><em>thank you!</em></h2>
+<p>Learn more about Positron @ <a href="https://positron.posit.co">positron.posit.co</a></p>
+<p>My website @ <a href="https://isabelizimm.me">isabelizimm.me</a></p>
+
+</section></section>
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+<p>isabelizimm.me/talk-pydata-tools</p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="index_files/libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="index_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="index_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="index_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="index_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="index_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="index_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="index_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="index_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="index_files/libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+          const outerScaffold = trigger.parentElement.cloneNode(true);
+          const codeEl = outerScaffold.querySelector('code');
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>
