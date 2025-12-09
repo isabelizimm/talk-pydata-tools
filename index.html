@@ -253,10 +253,9 @@ Isabel Zimmerman | Posit, PBC
 <h2>Why should you care about tools?</h2>
 <ul>
 <li class="fragment"><em>tool</em>: anything that can be used to carry out a particular function</li>
-<li class="fragment"></li>
 </ul>
 <aside class="notes">
-<p>the title of this talk is about tool users and tool builders.</p>
+<p>the title of this talk is about tools.</p>
 <p>i consider a tool to be anything i use for a specific task to get something done</p>
 <p>this talk is about tool users and builders and the skills they share</p>
 <p>now, these are not mutually exclusive identities.</p>
@@ -312,9 +311,9 @@ Isabel Zimmerman | Posit, PBC
 <p>maybe you don’t identify immediately as a tool builder!</p>
 <p>i’d like to convince you otherwise.</p>
 <p>by building a tool for yourself better results speed up future work</p>
+<p>barrier to entry is way lower with AI. enables everyone to be</p>
 <p>as part of my book nerdiness, i rebind books as well.</p>
 <p>i have special tools to decide the width of a book cover. these are simple pieces of carboard cut into special shapes for me to use. having tools that i have created just for me, to make my life easier, are really valuable in making certain tasks easier and more reproducible.</p>
-<p>barrier to entry is way lower with AI. enables everyone to be</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -408,19 +407,7 @@ Isabel Zimmerman | Posit, PBC
 </section></section>
 <section id="a-tools-hard-skills-the-technical-side" class="title-slide slide level1 center">
 <h1>A tool’s hard skills (the technical side)</h1>
-<aside class="notes">
-<p>thinking about best practices of tools, helps to start with the</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
+
 </section>
 
 <section>
@@ -442,8 +429,7 @@ Isabel Zimmerman | Posit, PBC
 </ul>
 <p>For tool builders:</p>
 <p>Expose clear interfaces/APIs– people can make custom extensions to customize their experience. using a tool that is already accepted by the community and customizing allows you to focus on the pieces you want</p>
-<p>grow with users: (rodrigo’s talk tomorrow morning and jules talk tomorrow morning)</p>
-<p>JULES TALK 9am tomorrow</p>
+<p>grow with users: (jules talk tomorrow morning) 2026 year of extension packages</p>
 <p>For tool users:</p>
 <p>Look for tools that play well with what you know</p>
 <style type="text/css">
@@ -466,9 +452,10 @@ Isabel Zimmerman | Posit, PBC
 <p>Positron</p>
 <ul>
 <li><p>IDE built specifically for data science</p></li>
-<li><p>includes things like positron vscode fork</p></li>
-<li><p>that’s nice, but important bc modularity gives users the ability to build the tool they <em>really</em> need</p></li>
+<li><p>VSCode fork, but includes things like variables, console, plots, etc</p></li>
 <li><p>gives users the ability to grow with the tool you’ve built</p></li>
+<li><p>rodrigo’s talk tomorrow morning about remote SSH and outgrowing your laptop</p></li>
+<li><p>that’s nice, but important bc modularity gives users the ability to build the tool they <em>really</em> need</p></li>
 <li><p>OpenVSX extensions, which means everyone’s Positron looks a little different</p></li>
 </ul>
 <style type="text/css">
@@ -487,8 +474,7 @@ Isabel Zimmerman | Posit, PBC
 <section id="reproducibility" class="title-slide slide level1 center">
 <h1>2. Reproducibility</h1>
 <aside class="notes">
-<p>ARTIFACT: The Waypoint Stones (Cross-platform compatibility)</p>
-<p><em>Place these markers and teleport your work anywhere</em> this</p>
+<p><em>Place these markers and teleport your work anywhere</em></p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -509,7 +495,8 @@ Isabel Zimmerman | Posit, PBC
 </ul>
 <aside class="notes">
 <p>reproducibility is something we hear about a lot for data science</p>
-<p>it is <em>integral</em> for trustworthy science, but there is a strong pull for exploring data in</p>
+<p>it is <em>integral</em> for trustworthy science, but there is a strong pull for exploring data in gui ways</p>
+<p>eg, posit open source built a package called great-tables (data exploration, export, send to excel)</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -573,7 +560,9 @@ Isabel Zimmerman | Posit, PBC
 <p><em>Simple is better than complex.</em> <em>Complex is better than complicated.</em> - Zen of Python</p>
 </blockquote>
 <aside class="notes">
+<p>zen of python:</p>
 <p>now, i know this slide says flexibility, and i really want to encourage that!</p>
+<p>Łukasz Langa pycon keynote from 2022 talking about complex types being a code smell that your function is too complex</p>
 <ul>
 <li>as i started to build tools, i wanted everything to support everything if i was typing an argument, i would be creating crazy unions to support pandas dataframes, polars dataframes, lists, dictionaries, tuples, <em>all of it</em></li>
 </ul>
@@ -594,12 +583,12 @@ Isabel Zimmerman | Posit, PBC
 <h2>Flexibility: Positron Assistant</h2>
 
 <img data-src="images/positron-assistant.gif" class="quarto-figure quarto-figure-center r-stretch"><aside class="notes">
+<p>AI tools i think have really highlighted the importance of starting with a reasonable amount of context but letting users configure more or less information.</p>
 <p>ai often does not have the right context for good data science work</p>
 <p>my team built positron assistant and databot in order to give things like users namespace in a jupyter notebook, data snippets, plot images, etc, in order to get the most out of your AI for data experience</p>
 <p>happy path/normal path: give users clear overview that x, y, z is included in the prompt</p>
 <p>clear way to remove/add context.</p>
 <p>BUT start from a happy path and give users</p>
-<p>AI tools i think have really highlighted the importance of starting with a reasonable amount of context but letting users configure more or less information.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -779,6 +768,8 @@ Isabel Zimmerman | Posit, PBC
 <li>Users: find the tool that works best with your usual path</li>
 </ul>
 <aside class="notes">
+<p>what do users care about, how can you help them find the things that are not immediately obvious</p>
+<p>Discoverability is the eternal quest. Hidden features are like secret passages—even if they lead to treasure, they’re useless if no one finds them.</p>
 <p>disocverability is hard! on documentation, in the actual API, in the UI</p>
 <p>documentation helps! but it can be equally important to have self-documenting things.</p>
 <p>information is hard to find and retain, so bringing to the front what actually gets used is really important</p>
@@ -803,8 +794,8 @@ Isabel Zimmerman | Posit, PBC
 <li><p>things that are constantly used</p></li>
 <li><p>what do users care about, how can you help them find the things that are not immediately obvious</p></li>
 </ul>
-<p>Discoverability is the eternal quest. Hidden features are like secret passages—even if they lead to treasure, they’re useless if no one finds them. with something like “Render on save” ; bringing it to the surface makes it actually usable.</p>
-<p>we’re looking to make ui changes to how our jupyter notebooks look to ease discoverability, and if you’re interested in chatting, come say hi at the posit booth!</p>
+<p>with something like “Render on save” ; bringing it to the surface vs deep in settings makes it actually usable.</p>
+<p>we’re looking to make ui changes to how our jupyter notebooks look to ease discoverability , and if you’re interested in chatting, come say hi at the posit booth!</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -970,8 +961,7 @@ Isabel Zimmerman | Posit, PBC
 <p>sometimes this doesn’t seem to be a good fit for documentation, i just want to brain dump things to help me sort out my own thoughts about it.</p>
 <p>luckily, we are now not only writing documentation for humans but also for robots, and robots are pretty good at helping connect the dots</p>
 <p>ive also found this to be a great maintenance task to create CLAUDE.md or other documentation for LLMs to consume.</p>
-<p>Not just for AI - helps you when you return to projects Forces you to articulate design decisions Makes you want to write more docs! Practical tip: When building, write docs as if explaining to an AI assistant</p>
-<p>What’s the purpose of this function? What are the gotchas? What’s the happy path?</p>
+<p>Articulate design decisions What’s the purpose of this function? What are the gotchas? What’s the happy path?</p>
 <p>doesnt have to be as polished as public documentation, but still beneficial to me if i leave a project and come back to it to help get me back up to speed</p>
 <blockquote>
 <p>release early, release often</p>
@@ -1004,8 +994,6 @@ Isabel Zimmerman | Posit, PBC
 </ul>
 <aside class="notes">
 <p>ARTIFACT: The Mission Compass (Posit’s philosophy) Always points toward “beautiful tools”</p>
-<p>-&gt; what tools are you using? are they compatible with each other?</p>
-<p>-&gt; think critically about your use case, is there a way to bridge them together or extend them specifically to better fit your use case? (JULES talk about extension packages)</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;

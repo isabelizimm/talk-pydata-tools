@@ -46,11 +46,10 @@ i assume you're here as someone cares about or uses Python, cares about or uses 
 
 ::: incremental
 - _tool_: anything that can be used to carry out a particular function
-- 
 :::
 
 ::: notes
-the title of this talk is about tool users and tool builders.
+the title of this talk is about tools.
 
 i consider a tool to be anything i use for a specific task to get something done
 
@@ -100,11 +99,12 @@ by building a tool for yourself
 better results
 speed up future work
 
+barrier to entry is way lower with AI. enables everyone to be 
+
 as part of my book nerdiness, i rebind books as well.
 
 i have special tools to decide the width of a book cover. these are simple pieces of carboard cut into special shapes for me to use. having tools that i have created just for me, to make my life easier, are really valuable in making certain tasks easier and more reproducible.
 
-barrier to entry is way lower with AI. enables everyone to be 
 :::
 
 ## Why should you care about _building_ tools?
@@ -179,10 +179,6 @@ Let's start with the hard skills
 
 # A tool's hard skills (the technical side)
 
-::: notes
-thinking about best practices of tools, helps to start with the 
-:::
-
 # 1. Modularity
 
 ## Modularity
@@ -200,10 +196,7 @@ For tool builders:
 
 Expose clear interfaces/APIs-- people can make custom extensions to customize their experience. using a tool that is already accepted by the community and customizing allows you to focus on the pieces you want
 
-grow with users: (rodrigo's talk tomorrow morning and jules talk tomorrow morning)
-
-JULES TALK 9am tomorrow
-
+grow with users: (jules talk tomorrow morning) 2026 year of extension packages
 
 For tool users:
 
@@ -222,23 +215,20 @@ now, this is a talk about tools, so its only fair to introduce the tool im curre
 Positron 
 
 - IDE built specifically for data science
-- includes things like
-positron vscode fork
+- VSCode fork, but includes things like variables, console, plots, etc
+-   gives users the ability to grow with the tool you've built
+- rodrigo's talk tomorrow morning about remote SSH and outgrowing your laptop 
 
 -   that's nice, but important bc modularity gives users the ability to build the tool they *really* need
--   gives users the ability to grow with the tool you've built
--   OpenVSX extensions, which means everyone's Positron looks a little different
 
+-   OpenVSX extensions, which means everyone's Positron looks a little different
 :::
 
 
 # 2. Reproducibility
 
 ::: notes
-ARTIFACT: The Waypoint Stones (Cross-platform compatibility)
-
 _Place these markers and teleport your work anywhere_
-this
 ::: 
 
 ## Reproducibility
@@ -249,9 +239,9 @@ this
 ::: notes
 reproducibility is something we hear about a lot for data science
 
-it is _integral_ for trustworthy science, but there is a strong pull for exploring data in 
+it is _integral_ for trustworthy science, but there is a strong pull for exploring data in gui ways
 
-
+eg, posit open source built a package called great-tables (data exploration, export, send to excel)
 :::
 
 ## Reproducibility: Data Explorer
@@ -293,7 +283,11 @@ so what sort of flexibility works well?
 
 
 ::: notes
+zen of python: 
+
 now, i know this slide says flexibility, and i really want to encourage that!
+
+Łukasz Langa pycon keynote from 2022 talking about complex types being a code smell that your function is too complex
 
 - as i started to build tools, i wanted everything to support everything
 if i was typing an argument, i would be creating crazy unions to support pandas dataframes, polars dataframes, lists, dictionaries, tuples, _all of it_
@@ -307,7 +301,7 @@ if you have something accept complex inputs, it's going to be way harder to also
 ![](images/positron-assistant.gif){fig-align="center"}
 
 ::: notes
-
+AI tools i think have really highlighted the importance of starting with a reasonable amount of context but letting users configure more or less information.
 
 ai often does not have the right context for good data science work
 
@@ -318,8 +312,6 @@ happy path/normal path: give users clear overview that x, y, z is included in th
 clear way to remove/add context. 
 
 BUT start from a happy path and give users
-
-AI tools i think have really highlighted the importance of starting with a reasonable amount of context but letting users configure more or less information.
 :::
 
 # Modularity. Reproducibility. Flexibility.
@@ -419,6 +411,10 @@ honestly all other subsets of soft skills sort of fall out of the idea of knowin
 -   Users: find the tool that works best with your usual path
 
 ::: notes
+what do users care about, how can you help them find the things that are not immediately obvious
+
+Discoverability is the eternal quest. Hidden features are like secret passages—even if they lead to treasure, they’re useless if no one finds them.
+
 disocverability is hard! on documentation, in the actual API, in the UI
 
 documentation helps! but it can be equally important to have self-documenting things.
@@ -437,9 +433,10 @@ information is hard to find and retain, so bringing to the front what actually g
 
 - what do users care about, how can you help them find the things that are not immediately obvious
 
-Discoverability is the eternal quest. Hidden features are like secret passages—even if they lead to treasure, they're useless if no one finds them. with something like "Render on save" ; bringing it to the surface makes it actually usable.
+with something like "Render on save" ; bringing it to the surface vs deep in settings makes it actually usable.
 
-we're looking to make ui changes to how our jupyter notebooks look to ease discoverability, and if you're interested in chatting, come say hi at the posit booth!
+we're looking to make ui changes to how our jupyter notebooks look to ease discoverability
+, and if you're interested in chatting, come say hi at the posit booth!
 :::
 
 # 3. Let little things have big impact {background-image="images/salve.png"}
@@ -550,11 +547,7 @@ luckily, we are now not only writing documentation for humans but also for robot
 
 ive also found this to be a great maintenance task to create CLAUDE.md or other documentation for LLMs to consume. 
 
-Not just for AI - helps you when you return to projects
-Forces you to articulate design decisions
-Makes you want to write more docs!
-Practical tip: When building, write docs as if explaining to an AI assistant
-
+Articulate design decisions
 What's the purpose of this function?
 What are the gotchas?
 What's the happy path?
@@ -577,9 +570,7 @@ doesnt have to be as polished as public documentation, but still beneficial to m
 ARTIFACT: The Mission Compass (Posit's philosophy)
 Always points toward "beautiful tools"
 
--> what tools are you using? are they compatible with each other? 
 
--> think critically about your use case, is there a way to bridge them together or extend them specifically to better fit your use case? (JULES talk about extension packages)
 
 :::
 
