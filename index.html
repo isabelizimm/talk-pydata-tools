@@ -208,11 +208,16 @@ Isabel Zimmerman | Posit, PBC
 <section id="welcome" class="title-slide slide level1 center" data-background-image="images/base.JPG">
 <h1>Welcome!</h1>
 <aside class="notes">
-<p>i am someone who has spent time building models</p>
+<p>i am someone who has spent time doing data science but then transitioned into building data science tools!!</p>
+<p>i LOVE tools.</p>
 <p>first full time python open source hire at Posit, when it was still called RStudio. We actually had folks building Python tools, but I was the first one dedicated SOLELY to novel Python work, particularly mlops python packages.</p>
-<p>i am a full time software engineer building python packages as well as python experiences inside IDEs, but i am also someone who enjoys doing things like this, being able to share my work with others, through a blog post or a conference talk.</p>
+<p>i am a full time software engineer building python packages as well as python experiences inside IDEs.</p>
+<p>but my love for tools is not only contstrained to computers</p>
+<p>but if you haven’t noticed, there is a magical goose on this slide, and that is not related to my open source work</p>
 <p>huge reader, coming to boston from a fantasy book convention in utah</p>
-<p>i love fantasy books because there’s usually a villain, a hero, and some sort of magic involved in the story. i also love a magical item that seems to solve every problem!</p>
+<p>i love fantasy books because of the magical items involved in the story.</p>
+<p>in one of my very favorite fantasy books, there’s a special earring that is passed down through generations to finally defeat the bad guy at the end of the series.</p>
+<p>something so incredibly satisfying about finding something that solves exactly the problem i have.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -246,16 +251,15 @@ Isabel Zimmerman | Posit, PBC
 </section>
 <section id="why-should-you-care-about-tools-1" class="slide level2">
 <h2>Why should you care about tools?</h2>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href=""></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
-<span id="cb1-2"><a href=""></a>x <span class="op">=</span> pd.DataFrame(mydata)</span>
-<span id="cb1-3"><a href=""></a></span>
-<span id="cb1-4"><a href=""></a><span class="im">import</span> polars <span class="im">as</span> pl</span>
-<span id="cb1-5"><a href=""></a>x <span class="op">=</span> pl.DataFrame(mydata)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li class="fragment"><em>tool</em>: anything that can be used to carry out a particular function</li>
+<li class="fragment"></li>
+</ul>
 <aside class="notes">
-<p>The villain in the tool-user story is the inertia of using the same tool because you’re used to it, and I think this talk does a good job of</p>
-<p>I’d like to convince you to try something new thoughtfully</p>
-<p>Is there some aspect of thoughtfully PICKING tools.</p>
-<p>tool user, choosing the right one</p>
+<p>the title of this talk is about tool users and tool builders.</p>
+<p>i consider a tool to be anything i use for a specific task to get something done</p>
+<p>this talk is about tool users and builders and the skills they share</p>
+<p>now, these are not mutually exclusive identities.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -268,28 +272,22 @@ Isabel Zimmerman | Posit, PBC
           display:block!important;
       }</style></aside>
 </section>
-<section id="why-should-you-care-about-tools-2" class="slide level2">
-<h2>Why should you care about tools?</h2>
-<div class="fragment">
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href=""></a><span class="ex">gti</span> push</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<aside class="notes">
-<p>“Even heroes typo their incantations”</p>
-<p>barrier to entry is way lower with AI</p>
-<p>by building a tool for yourself better results speed up future work</p>
-<p>enables everyone to be</p>
-<p>maybe you don’t identify immediately as a tool builder!</p>
-<p>i’d like to convince you otherwise.</p>
-<p>a tool is anything i use for a specific task to get something done</p>
-<p>i am a book nerd, and rebind books as well.</p>
-<p>i have a tool that i have created just for me</p>
+<section id="why-should-you-care-about-using-tools" class="slide level2">
+<h2>Why should you care about <em>using</em> tools?</h2>
 <ul>
-<li>this is also a good tool!</li>
+<li>Thoughtful tool choice</li>
 </ul>
-<p>i use an IDE as a tool to help me write code by adding a GUI and other affordances to make it a good experience</p>
-<p>i use a python package as a tool</p>
-<p>i use the python language as a tool to build a package</p>
-<p>everyone sits somewhere on the spectrum of building and consuming tools.</p>
-<p>if you’re writing code, you’re building something. you might be building a dashboard, a report, an internal or external tool, or something else entirely.</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href=""></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href=""></a>x <span class="op">=</span> pd.DataFrame(mydata)</span>
+<span id="cb1-3"><a href=""></a></span>
+<span id="cb1-4"><a href=""></a><span class="im">import</span> polars <span class="im">as</span> pl</span>
+<span id="cb1-5"><a href=""></a>x <span class="op">=</span> pl.DataFrame(mydata)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<aside class="notes">
+<p>but maybe you’re someone who feels more strongly that they are primarily a user of tools.</p>
+<p>if you’re in a tool -user fantasy story, the villain would be the inertia of using the same tool because you’re used to it, and I’d like to convince you to consider your tools as a very important</p>
+<p>Is there some aspect of thoughtfully PICKING tools.</p>
+<p>tool user, choosing the right one</p>
+<p>pandas vs polars</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -301,16 +299,66 @@ Isabel Zimmerman | Posit, PBC
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-</div>
+</section>
+<section id="why-should-you-care-about-building-tools" class="slide level2">
+<h2>Why should you care about <em>building</em> tools?</h2>
+<ul>
+<li>Supercharge your own work</li>
+<li>A tool can be <em>anything</em>, including things you build for only yourself</li>
+<li>You might already actually be building tools!</li>
+</ul>
+<aside class="notes">
+<p>everyone sits somewhere on the spectrum of building and consuming tools.</p>
+<p>maybe you don’t identify immediately as a tool builder!</p>
+<p>i’d like to convince you otherwise.</p>
+<p>by building a tool for yourself better results speed up future work</p>
+<p>as part of my book nerdiness, i rebind books as well.</p>
+<p>i have special tools to decide the width of a book cover. these are simple pieces of carboard cut into special shapes for me to use. having tools that i have created just for me, to make my life easier, are really valuable in making certain tasks easier and more reproducible.</p>
+<p>barrier to entry is way lower with AI. enables everyone to be</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
+</section>
+<section id="why-should-you-care-about-building-tools-1" class="slide level2">
+<h2>Why should you care about <em>building</em> tools?</h2>
+<ul>
+<li>Supercharge your own work</li>
+<li>A tool can be <em>anything</em>, including things you build for only yourself</li>
+<li>You might already actually be building tools!</li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href=""></a><span class="ex">gti</span> push</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<aside class="notes">
+<p>tools for yourself– does not have to be anything fancy!</p>
+<p>if you’re writing code, you’re building something. a dashboard or report is a tool to make business decisions. maybe you have a function you share internally or externally to help streamline data science workflows, or something else entirely. these are all tools that you might already be making</p>
+<style type="text/css">
+        span.MJX_Assistive_MathML {
+          position:absolute!important;
+          clip: rect(1px, 1px, 1px, 1px);
+          padding: 1px 0 0 0!important;
+          border: 0!important;
+          height: 1px!important;
+          width: 1px!important;
+          overflow: hidden!important;
+          display:block!important;
+      }</style></aside>
 </section></section>
 <section>
 <section id="making-tools" class="title-slide slide level1 center" data-background-image="images/bag.JPG">
 <h1>Making tools</h1>
 <aside class="notes">
-<p>When I transitioned from data scientist to tool builder, I thought I knew what mattered. I had the technical skills - I could write clean code, design APIs, optimize performance. I thought: “If it works, people will use it.”</p>
-<p>We do a fair amount of user testing where we watch someone use Positron to understand how folks interact with our product.</p>
-<p>I’ve watched people who are really brilliant get stuck because a button that refreshed buttons only</p>
-<p>People will get stuck. Not because the code was broken - it worked as I expected it to. They got stuck because they couldn’t find the button. Or the error message was confusing. Or it didn’t fit into their workflow.</p>
+<p>When I transitioned from data scientist to tool builder, I thought I knew what mattered. I thought had already filled my bag with lots of tools!!!</p>
+<p>I had the technical skills - I could write clean code, design APIs, optimize performance. I thought: “If it works, people will use it.”</p>
+<p>We do a fair amount of user testing at Posit where we watch someone use the tools we’ve built to understand how folks interact with our product.</p>
+<p>I’ve watched people who are really brilliant get stuck because a button was difficult to find. or the error message was confusing</p>
+<p>People will get stuck. Not because the code was broken - it worked as I expected it to. Tool users, and tool builders are both imperfect humans. that’s beautiful! because it makes you realize that being a good tool user or builder is actually a skill you can learn and build</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -325,11 +373,10 @@ Isabel Zimmerman | Posit, PBC
 </section>
 <section id="skill-types" class="slide level2">
 <h2>Skill types</h2>
-<div class="fragment">
 <ul>
 <li class="fragment">“hard” skills: the computer elements
 <ul>
-<li class="fragment">modularity, portability, flexibility</li>
+<li class="fragment">modularity, reproducibility, flexibility</li>
 </ul></li>
 <li class="fragment">“soft” skills: the human elements
 <ul>
@@ -342,11 +389,9 @@ Isabel Zimmerman | Posit, PBC
 <p>Now there is a lot of baggage around the terms “hard” and “soft” skills as one side or another comes into style. Some years, LinkedIn says soft skills are all you need, and then other years, soft skills are no longer needed.</p>
 <p>I’m going to ask you today to put the discourse around these terms aside for a moment. I’m not interested in trying to convince you of one or the other is better, but look at the dicotomy of different ways of working.</p>
 <p>Really, I was thinking a lot about how to frame different ways to build tools and how to think of what is important. That’s when I realized: there are two types of skills in tool building.</p>
-<p>Hard skills - these are the technical foundations. Modularity, so your tool plays well with others. Reproducibility, so things work consistently. Structure, so your code is maintainable. These skills get your tool to work.</p>
+<p>Hard skills in tool building and on a resume are both technical foundations. Modularity, so your tool plays well with others. Reproducibility, so things work consistently. Structure, so your code is maintainable. These skills get your tool to work.</p>
 <p>Soft skills - these are the human elements. Knowing your audience. Highlighting what people actually use. Letting little improvements have big impact. These skills get people to love your tool.</p>
 <p>Here’s the thing: you need both.</p>
-<p>A tool with only hard skills is like a perfectly engineered car with no steering wheel. It works, but good luck using it.</p>
-<p>A tool with only soft skills is like a beautiful website that crashes when you click anything. It delights, until it doesn’t.</p>
 <p>Today, we’re going to explore both. Because the best tools - the ones that actually make data work better - nail both the technical foundation AND the human experience.</p>
 <p>Let’s start with the hard skills</p>
 <style type="text/css">
@@ -360,7 +405,6 @@ Isabel Zimmerman | Posit, PBC
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-</div>
 </section></section>
 <section id="a-tools-hard-skills-the-technical-side" class="title-slide slide level1 center">
 <h1>A tool’s hard skills (the technical side)</h1>
@@ -382,11 +426,26 @@ Isabel Zimmerman | Posit, PBC
 <section>
 <section id="modularity" class="title-slide slide level1 center">
 <h1>1. Modularity</h1>
+
+</section>
+<section id="modularity-1" class="slide level2">
+<h2>Modularity</h2>
+<ul>
+<li>Building from known projects</li>
+<li>Allows tools to grow with users</li>
+<li>Extension packages &lt;3</li>
+</ul>
 <aside class="notes">
 <ul>
 <li>when you build tools, build them from things that are known/scale</li>
 <li>finding tools that work with what you already know</li>
 </ul>
+<p>For tool builders:</p>
+<p>Expose clear interfaces/APIs– people can make custom extensions to customize their experience. using a tool that is already accepted by the community and customizing allows you to focus on the pieces you want</p>
+<p>grow with users: (rodrigo’s talk tomorrow morning and jules talk tomorrow morning)</p>
+<p>JULES TALK 9am tomorrow</p>
+<p>For tool users:</p>
+<p>Look for tools that play well with what you know</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -412,10 +471,6 @@ Isabel Zimmerman | Posit, PBC
 <li><p>gives users the ability to grow with the tool you’ve built</p></li>
 <li><p>OpenVSX extensions, which means everyone’s Positron looks a little different</p></li>
 </ul>
-<p>For tool builders:</p>
-<p>Expose clear interfaces/APIs Make components swappable</p>
-<p>For tool users:</p>
-<p>Look for tools that play well with your existing stack Prefer tools with clear extension points</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -429,13 +484,11 @@ Isabel Zimmerman | Posit, PBC
       }</style></aside>
 </section></section>
 <section>
-<section id="portability" class="title-slide slide level1 center">
-<h1>2. Portability</h1>
+<section id="reproducibility" class="title-slide slide level1 center">
+<h1>2. Reproducibility</h1>
 <aside class="notes">
 <p>ARTIFACT: The Waypoint Stones (Cross-platform compatibility)</p>
-<p><em>Place these markers and teleport your work anywhere</em></p>
-<p>does this code give you output that works in many places?</p>
-<p>this</p>
+<p><em>Place these markers and teleport your work anywhere</em> this</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -448,12 +501,15 @@ Isabel Zimmerman | Posit, PBC
           display:block!important;
       }</style></aside>
 </section>
-<section id="portability-quarto" class="slide level2">
-<h2>Portability: Quarto</h2>
-<p>{{ screenshot of quarto in rstudio/vscode/positron side by side}}</p>
+<section id="reproducibility-1" class="slide level2">
+<h2>Reproducibility</h2>
+<ul>
+<li>Data folks know how important this is!</li>
+<li>Focus on the creation of reproducible artifacts</li>
+</ul>
 <aside class="notes">
-<p>Example: Quarto works with Jupyter, VS Code, RStudio, Positron</p>
-<p>Doesn’t lock you into one ecosystem</p>
+<p>reproducibility is something we hear about a lot for data science</p>
+<p>it is <em>integral</em> for trustworthy science, but there is a strong pull for exploring data in</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -466,13 +522,15 @@ Isabel Zimmerman | Posit, PBC
           display:block!important;
       }</style></aside>
 </section>
-<section id="portability-data-explorer" class="slide level2">
-<h2>Portability: Data Explorer</h2>
+<section id="reproducibility-data-explorer" class="slide level2">
+<h2>Reproducibility: Data Explorer</h2>
 
 <img data-src="images/convert-to-code.gif" class="quarto-figure quarto-figure-center r-stretch"><aside class="notes">
 <p>big emphasis on a first-in-class data explorer</p>
 <p>astounding technical feat</p>
+<p>great for quick</p>
 <p>able to convert filters to code at the click of a button</p>
+<p>really interesting application of being able to bridge the gap between gui data science and reproducibility</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -534,13 +592,8 @@ Isabel Zimmerman | Posit, PBC
 </section>
 <section id="flexibility-positron-assistant" class="slide level2">
 <h2>Flexibility: Positron Assistant</h2>
-<div class="fragment">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="images/positron-assistant.gif" class="quarto-figure quarto-figure-center"></p>
-</figure>
-</div>
-<aside class="notes">
+
+<img data-src="images/positron-assistant.gif" class="quarto-figure quarto-figure-center r-stretch"><aside class="notes">
 <p>ai often does not have the right context for good data science work</p>
 <p>my team built positron assistant and databot in order to give things like users namespace in a jupyter notebook, data snippets, plot images, etc, in order to get the most out of your AI for data experience</p>
 <p>happy path/normal path: give users clear overview that x, y, z is included in the prompt</p>
@@ -558,10 +611,9 @@ Isabel Zimmerman | Posit, PBC
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-</div>
 </section></section>
-<section id="modularity.-portability.-flexibility." class="title-slide slide level1 center">
-<h1>Modularity. Portability. Flexibility.</h1>
+<section id="modularity.-reproducibility.-flexibility." class="title-slide slide level1 center">
+<h1>Modularity. Reproducibility. Flexibility.</h1>
 <aside class="notes">
 <p>three virtues of a good tool</p>
 <p>but there’s one thing that we haven’t talked about that is front of mind for everyone these days</p>
@@ -603,31 +655,12 @@ Isabel Zimmerman | Posit, PBC
 <section id="the-era-of-ai-everything-1" class="slide level2">
 <h2>2025: the era of AI everything</h2>
 
-<img data-src="images/mostly_ai.png" class="quarto-figure quarto-figure-center r-stretch"><div class="footer">
-<p>https://survey.stackoverflow.co/2025/ai#developer-tools-ai-tool</p>
-</div>
-<aside class="notes">
-<p>Developers show the most resistance to using AI for high-responsibility, systemic tasks like Deployment and monitoring (76% don’t plan to) and Project planning (69% don’t plan to).</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-<section id="the-era-of-ai-everything-2" class="slide level2">
-<h2>2025: the era of AI everything</h2>
-
 <img data-src="images/dont_plan_to_use_ai.png" class="quarto-figure quarto-figure-center r-stretch"><div class="footer">
 <p>https://survey.stackoverflow.co/2025/ai#developer-tools-dont-plan-to-use-ai-for-this-task</p>
 </div>
 <aside class="notes">
 <p>Developers show the most resistance to using AI for high-responsibility, systemic tasks like Deployment and monitoring (76% don’t plan to) and Project planning (69% don’t plan to).</p>
+<p>planning is a lot of the soft skills -&gt; things like deciding what is important, product knowledge</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -686,9 +719,7 @@ Isabel Zimmerman | Posit, PBC
 </ul>
 <aside class="notes">
 <p>data work inherently looks a little different than what we would consider a software engineer to work</p>
-<p>data is highly driven by exploration, experiments, iteration, exploring uncharted territories</p>
-<p>software engineering is highly driven by structure, perhaps a certain outcome (like a new button, etc)</p>
-<p>Data practitioners explore uncharted territories (iteration, experimentation), while software engineers build fortresses in known lands (structure, specific outcomes). You wouldn’t give a cartographer a mason’s tools. The permanent console is like having a magical campfire that’s always burning—a place to test spells and try new incantations safely.</p>
+<p>Data practitioners explore uncharted territories (iteration, experimentation), while software engineers build fortresses in known lands (structure, specific outcomes). You wouldn’t give a cartographer a mason’s tools.</p>
 <p>which means a tool that is built for a saoftware engineer might not be the best fit for someone who needs to do lots of exploring like a data scientist</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -709,7 +740,6 @@ Isabel Zimmerman | Posit, PBC
 <p>one way we really wanted to show data scientists that we care is by having a permanent console in Positron.</p>
 <p>This is a place where you can send code to be executed; if you’re not familiar with having an IPython console, you can kind of think of having a Jupyter Notebook lite.</p>
 <p>You can use keyboard shortcuts like command or control enter to send code from a python script directly to the console, which allows you to</p>
-<p>there is also jupyter notebook support, but this dedicated area is highly flexible to work with python scripts, quarto documents, etc</p>
 <p>not only was it important to have an iterable console, we also made edits to the LSP (how your IDE is able to do things like give code completions and syntax highlighting)</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -724,8 +754,8 @@ Isabel Zimmerman | Posit, PBC
       }</style></aside>
 </section></section>
 <section>
-<section id="understand-what-gets-used-highlight-that" class="title-slide slide level1 center" data-background-image="images/lantern.png">
-<h1>2. Understand what gets used, highlight that</h1>
+<section id="emphasize-discoverability" class="title-slide slide level1 center" data-background-image="images/lantern-corner.png">
+<h1>2. Emphasize discoverability</h1>
 <aside class="notes">
 <p>ARTIFACT: The Path-Illuminating Lantern (discoverability)</p>
 <p>Shines light on the trails most traveled</p>
@@ -742,16 +772,16 @@ Isabel Zimmerman | Posit, PBC
           display:block!important;
       }</style></aside>
 </section>
-<section id="understand-what-gets-used" class="slide level2">
-<h2>Understand what gets used</h2>
+<section id="emphasize-discoverability-1" class="slide level2">
+<h2>Emphasize discoverability</h2>
 <ul>
-<li>Builders: bring to the front the things that frequently used</li>
+<li>Builders: Understand what gets used</li>
 <li>Users: find the tool that works best with your usual path</li>
 </ul>
 <aside class="notes">
 <p>disocverability is hard! on documentation, in the actual API, in the UI</p>
 <p>documentation helps! but it can be equally important to have self-documenting things.</p>
-<p>information is hard to find and retain, so the</p>
+<p>information is hard to find and retain, so bringing to the front what actually gets used is really important</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -766,13 +796,15 @@ Isabel Zimmerman | Posit, PBC
 </section>
 <section id="quarto-simple-buttons" class="slide level2">
 <h2>Quarto: simple buttons</h2>
-<aside class="notes">
+
+<img data-src="images/quarto-buttons.png" class="quarto-figure quarto-figure-center r-stretch"><aside class="notes">
 <ul>
 <li><p>things that are high impact but hard to find (render on save was deep in settings)</p></li>
 <li><p>things that are constantly used</p></li>
 <li><p>what do users care about, how can you help them find the things that are not immediately obvious</p></li>
 </ul>
-<p>Discoverability is the eternal quest. Hidden features are like secret passages—even if they lead to treasure, they’re useless if no one finds them. “Render on save” was a legendary artifact buried in a settings dungeon; bringing it to the surface makes it actually usable.</p>
+<p>Discoverability is the eternal quest. Hidden features are like secret passages—even if they lead to treasure, they’re useless if no one finds them. with something like “Render on save” ; bringing it to the surface makes it actually usable.</p>
+<p>we’re looking to make ui changes to how our jupyter notebooks look to ease discoverability, and if you’re interested in chatting, come say hi at the posit booth!</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -790,17 +822,14 @@ Isabel Zimmerman | Posit, PBC
 <h1>3. Let little things have big impact</h1>
 <aside class="notes">
 <p>ARTIFACT: The Papercut Healing Salve (small improvements)</p>
-<p>Death by a thousand papercuts is still death Each tiny improvement is a drop of healing potion</p>
+<p>sometimes using a tool can feel like death by a thousand papercuts</p>
+<p>Each tiny improvement is a drop of healing potion</p>
 <p>i would love to do that, but how can i even find the little things?</p>
 <p>do painful things, often</p>
 <ul>
 <li>great way to learn to do hard things</li>
 <li>great way to discover how to make things simpler</li>
-<li>Quarto: open source authoring</li>
-<li>how i made these slides, my website, dashboards</li>
-<li>highlighting the things that are</li>
 </ul>
-<p>not something that is obviously painful, but death by 100000 papercuts</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -812,10 +841,6 @@ Isabel Zimmerman | Posit, PBC
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-</section>
-<section id="big-impact-keyboard-shortcuts" class="slide level2">
-<h2>Big impact: keyboard shortcuts</h2>
-<p>{{adding in jupyter keyboard shortcuts}}</p>
 </section>
 <section id="big-impact-run-script" class="slide level2">
 <h2>Big impact: run script</h2>
@@ -856,8 +881,10 @@ Isabel Zimmerman | Posit, PBC
 <section id="explain-your-work" class="title-slide slide level1 center" data-background-image="images/crow.JPG">
 <h1>4. Explain your work</h1>
 <aside class="notes">
-<p>ARTIFACT: The Whispering Familiar (help pane)</p>
+<p>idea of a rubber duck in programming when you try to explain thing</p>
 <p>Perches on your shoulder, wise and patient</p>
+<p>Explaining your work is having a helper perched on your shoulder, ready to assist or take over your tasks.</p>
+<p>and here’s the thing when you try to explain things….</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -878,7 +905,9 @@ Isabel Zimmerman | Posit, PBC
 </blockquote>
 </div>
 <aside class="notes">
-<p>try to explain it. if you struggle to explain, probably a good signal that it can be confusing to users as well!</p>
+<p>from the zen of python</p>
+<p>helpful for handoff of work, collaborating with others, but selfishly…</p>
+<p>having clarity on the code your are writing will supercharge your own ability to comprehend and build it.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -895,12 +924,11 @@ Isabel Zimmerman | Posit, PBC
 <h2>Explain your work</h2>
 
 <img data-src="images/bluesky.jpeg" class="quarto-figure quarto-figure-center r-stretch"><aside class="notes">
-<p>now, the original context of this is literary, but i think its really a helpful framing</p>
-<p>if you’re documenting your function by adding types</p>
+<p>now, the original context of this is literary, but i think its really a helpful framing.</p>
+<p>if you’re looking at a new package, seeing if there is not only API documentation but also examples, maybe a getting started guide</p>
 <p>if you’re adding docstrings to functions</p>
-<p>if you’re</p>
 <p>all of this helps give your users (including yourself) better information when you’re using a tool</p>
-<p>The help pane is like having a wise familiar perched on your shoulder, ready to whisper the secrets of any incantation you point at. Writing for AI is like leaving notes for a very literal apprentice who will take you absolutely seriously.</p>
+<p>add types to your functions. types are not <em>necessary</em> in Python, but if you are able to write down your intensions, it’s way easier for you and others to understand intent!</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -919,10 +947,9 @@ Isabel Zimmerman | Posit, PBC
 <img data-src="images/help-pane.gif" class="quarto-figure quarto-figure-center r-stretch"><aside class="notes">
 <p>the hard part is sometimes surfacing this information later.</p>
 <p>Something we really wanted to focus on is bringing rich api documentation closer to users, so they don’t have to leave the IDE to find information they need (and that probably they already have, it’s just hard to find!)</p>
-<p>we built out a help pane, that has navigation, rich highlighting, linked docs.</p>
+<p>we built out a help pane, that has navigation, rich highlighting, linked docs. support numpy, sphinx, google, and epytext style docstrings</p>
 <p>so users can just write their function or object name with a question mark in the console and immediately see information they need.</p>
 <p>helps users, helps builders by narrowing the feedback loop between the two</p>
-<p>support numpy, sphinx, google, and epytext style docstrings</p>
 <p>docs are a good place to write things down, but sometimes it feels like too formal of a place to add brainstorming or half baked explanations</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
@@ -964,19 +991,21 @@ Isabel Zimmerman | Posit, PBC
           display:block!important;
       }</style></aside>
 </section></section>
+<section>
 <section id="holistic-tools" class="title-slide slide level1 center">
 <h1>Holistic tools</h1>
 
 </section>
-
-<section id="a-mission-to-have-beautiful-tools" class="title-slide slide level1 center" data-background-image="images/tools.JPG">
-<h1>A mission to have beautiful tools</h1>
+<section id="a-mission-to-have-beautiful-tools" class="slide level2" data-background-image="images/tools.png">
+<h2>A mission to have beautiful tools</h2>
+<ul>
+<li>Considering the input and output of your work</li>
+<li>Take on complexity to make a user’s life easier</li>
+</ul>
 <aside class="notes">
-<p>ARTIFACT: The Mission Compass (Posit’s philosophy)</p>
-<p>Always points toward “beautiful tools”</p>
-<p>caring deeply about the input and output of your work</p>
-<p>willing to take on complexity to make a user’s life easier</p>
-<p>literally on our about page!</p>
+<p>ARTIFACT: The Mission Compass (Posit’s philosophy) Always points toward “beautiful tools”</p>
+<p>-&gt; what tools are you using? are they compatible with each other?</p>
+<p>-&gt; think critically about your use case, is there a way to bridge them together or extend them specifically to better fit your use case? (JULES talk about extension packages)</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -989,13 +1018,16 @@ Isabel Zimmerman | Posit, PBC
           display:block!important;
       }</style></aside>
 </section>
-
-<section id="feedback-loops" class="title-slide slide level1 center" data-background-image="images/oroborus.JPG">
-<h1>Feedback loops</h1>
+<section id="feedback-loops" class="slide level2" data-background-image="images/oroborus.png">
+<h2>Feedback loops</h2>
+<ul>
+<li>Use tools</li>
+<li>Notice pain points</li>
+<li>Share with others</li>
+</ul>
 <aside class="notes">
-<p>ARTIFACT: The Feedback Loop Ouroboros (continuous improvement)</p>
-<p>A serpent eating its tail, endlessly cycling</p>
 <p>Use tools → Notice pain points → Build better tools → Share with others This is how the ecosystem improves You’re both a consumer and contributor Your unique perspective matters</p>
+<p>Building tools isn’t about reaching a final destination (the perfect IDE, the ultimate package). It’s about the hero’s journey that never ends—using tools reveals what’s needed, building reveals what’s possible, and sharing starts the cycle anew.</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -1007,41 +1039,15 @@ Isabel Zimmerman | Posit, PBC
           overflow: hidden!important;
           display:block!important;
       }</style></aside>
-</section>
-
+</section></section>
+<section>
 <section id="your-most-powerful-tool-your-voice" class="title-slide slide level1 center">
 <h1>Your most powerful tool: your voice!</h1>
 <aside class="notes">
-<p>ARTIFACT: The Voice Amplification Horn Blog posts become battle cries</p>
-<p>Blog posts, conference talks, GitHub issues, linkedin posts Sharing what works (and what doesn’t) helps everyone Your feedback makes tools better Your tools make others’ work better This is the adventure: The continuous cycle of building and using</p>
-<p>Every great tool starts as someone’s story of frustration and triumph. When you write that blog post or file that GitHub issue, you’re not just complaining—you’re adding verses to the collective epic. Future tool-builders will sing your songs (read your posts) and build better magic because you shared your journey.</p>
-<style type="text/css">
-        span.MJX_Assistive_MathML {
-          position:absolute!important;
-          clip: rect(1px, 1px, 1px, 1px);
-          padding: 1px 0 0 0!important;
-          border: 0!important;
-          height: 1px!important;
-          width: 1px!important;
-          overflow: hidden!important;
-          display:block!important;
-      }</style></aside>
-</section>
-
-<section>
-<section id="building-your-toolkit" class="title-slide slide level1 center" data-background-image="images/bag.JPG">
-<h1>Building your toolkit</h1>
-<aside class="notes">
-<ul>
-<li>Start with modular, composable tools</li>
-<li>Pay attention to what delights you (and what frustrates you)</li>
-<li>Your toolkit should evolve as you do</li>
-<li>You’re not building for everyone - build for someone</li>
-<li>Every delightful moment counts</li>
-<li>Small improvements compound over time</li>
-</ul>
-<p>if i was getting into the business of making cheesy motivational posters for data folks, i’d probably start here.</p>
-<p>Building tools isn’t about reaching a final destination (the perfect IDE, the ultimate package). It’s about the hero’s journey that never ends—using tools reveals what’s needed, building reveals what’s possible, and sharing starts the cycle anew.</p>
+<p>Every great tool starts as someone’s story of frustration and triumph.</p>
+<p>Blog posts, conference talks, GitHub issues, linkedin posts</p>
+<p>Sharing what works (and what doesn’t) helps everyone</p>
+<p>Your feedback makes tools better Your tools make others’ work better This is the adventure: The continuous cycle of building and using</p>
 <style type="text/css">
         span.MJX_Assistive_MathML {
           position:absolute!important;
@@ -1056,12 +1062,10 @@ Isabel Zimmerman | Posit, PBC
 </section>
 <section id="what-makes-tools-stick" class="slide level2">
 <h2>What makes tools stick?</h2>
-<p>Not perfection, but:</p>
-<ol type="1">
-<li>Solving a real problem (hard skills)</li>
-<li>Making the experience enjoyable (soft skills)</li>
-<li>Deep caring for users (mission)</li>
-</ol>
+<ul>
+<li>The hard skills: modularity, reproducibility, flexibility</li>
+<li>The soft skills: Knowing your users, emphasizing discoverability, building little things for big impact, explaining your work</li>
+</ul>
 </section>
 <section id="thank-you" class="slide level2">
 <h2><em>thank you!</em></h2>

@@ -11,17 +11,26 @@ format:
 # Welcome! {background-image="images/base.JPG"}
 
 ::: notes
-i am someone who has spent time building models
+i am someone who has spent time doing data science but then transitioned into building data science tools!!
+
+i LOVE tools.
 
 first full time python open source hire at Posit, when it was still called RStudio.
 We actually had folks building Python tools, but I was the first one dedicated SOLELY to novel Python work, particularly mlops python packages.
 
-i am a full time software engineer building python packages as well as python experiences inside IDEs, but i am also someone who enjoys doing things like this, being able to share my work with others, through a blog post or a conference talk.
+i am a full time software engineer building python packages as well as python experiences inside IDEs.
+
+but my love for tools is not only contstrained to computers
+
+but if you haven't noticed, there is a magical goose on this slide, and that is not related to my open source work
 
 huge reader, coming to boston from a fantasy book convention in utah
 
-i love fantasy books because there's usually a villain, a hero, and some sort of magic involved in the story. 
-i also love a magical item that seems to solve every problem!
+i love fantasy books because of the magical items involved in the story. 
+
+in one of my very favorite fantasy books, there's a special earring that is passed down through generations to finally defeat the bad guy at the end of the series.
+
+something so incredibly satisfying about finding something that solves exactly the problem i have.
 :::
 
 
@@ -35,6 +44,25 @@ i assume you're here as someone cares about or uses Python, cares about or uses 
 
 ## Why should you care about tools?
 
+::: incremental
+- _tool_: anything that can be used to carry out a particular function
+- 
+:::
+
+::: notes
+the title of this talk is about tool users and tool builders.
+
+i consider a tool to be anything i use for a specific task to get something done
+
+this talk is about tool users and builders and the skills they share
+
+now, these are not mutually exclusive identities.
+:::
+
+## Why should you care about _using_ tools?
+
+- Thoughtful tool choice
+
 ```python
 import pandas as pd
 x = pd.DataFrame(mydata)
@@ -44,82 +72,80 @@ x = pl.DataFrame(mydata)
 ```
 
 ::: notes
-The villain in the tool-user story is the inertia of using the same tool because you're used to it, and I think this talk does a good job of
+but maybe you're someone who feels more strongly that they are primarily a user of tools.
 
-I'd like to convince you to try something new thoughtfully
+if you're in a tool -user fantasy story, the villain would be the inertia of using the same tool because you're used to it, and I'd like to convince you to consider your tools as a very important 
 
 Is there some aspect of thoughtfully PICKING tools.
 
 tool user, choosing the right one
+
+pandas vs polars
 ::: 
 
-## Why should you care about tools?
+## Why should you care about _building_ tools?
 
-. . . 
+- Supercharge your own work
+- A tool can be _anything_, including things you build for only yourself
+- You might already actually be building tools!
+
+::: notes
+everyone sits somewhere on the spectrum of building and consuming tools.
+
+maybe you don't identify immediately as a tool builder! 
+
+i'd like to convince you otherwise.
+
+by building a tool for yourself
+better results
+speed up future work
+
+as part of my book nerdiness, i rebind books as well.
+
+i have special tools to decide the width of a book cover. these are simple pieces of carboard cut into special shapes for me to use. having tools that i have created just for me, to make my life easier, are really valuable in making certain tasks easier and more reproducible.
+
+barrier to entry is way lower with AI. enables everyone to be 
+:::
+
+## Why should you care about _building_ tools?
+
+- Supercharge your own work
+- A tool can be _anything_, including things you build for only yourself
+- You might already actually be building tools!
 
 ```bash
 gti push
 ```
 
 ::: notes
-"Even heroes typo their incantations"
-
-barrier to entry is way lower with AI
-
-
-by building a tool for yourself
-better results
-speed up future work
-
-
-enables everyone to be 
-
-maybe you don't identify immediately as a tool builder! 
-
-i'd like to convince you otherwise.
-
-a tool is anything i use for a specific task to get something done
-
-i am a book nerd, and rebind books as well.
-
-i have a tool that i have created just for me
-
-- this is also a good tool!
-
-i use an IDE as a tool to help me write code by adding a GUI and other affordances to make it a good experience
-
-i use a python package as a tool
-
-i use the python language as a tool to build a package
-
-everyone sits somewhere on the spectrum of building and consuming tools.
+tools for yourself-- does not have to be anything fancy!
 
 if you're writing code, you're building something.
-you might be building a dashboard, a report, an internal or external tool, or something else entirely.
+a dashboard or report is a tool to make business decisions. maybe you have a function you share internally or externally to help streamline data science workflows, or something else entirely. these are all tools that you might already be making 
 :::
 
 # Making tools {background-image="images/bag.JPG"}
 
 ::: notes
-When I transitioned from data scientist to tool builder, I thought I knew what mattered. I had the technical skills - I could write clean code, design APIs, optimize performance. I thought: "If it works, people will use it."
+When I transitioned from data scientist to tool builder, I thought I knew what mattered. I thought had already filled my bag with lots of tools!!!
 
-We do a fair amount of user testing where we watch someone use Positron to understand how folks interact with our product.
+I had the technical skills - I could write clean code, design APIs, optimize performance. I thought: "If it works, people will use it."
 
-I've watched people who are really brilliant get stuck because a button that refreshed buttons only 
+We do a fair amount of user testing at Posit where we watch someone use the tools we've built to understand how folks interact with our product.
+
+I've watched people who are really brilliant get stuck because a button was difficult to find. or the error message was confusing
 
 
-People will get stuck. Not because the code was broken - it worked as I expected it to. They got stuck because they couldn't find the button. Or the error message was confusing. Or it didn't fit into their workflow.
+People will get stuck. Not because the code was broken - it worked as I expected it to. Tool users, and tool builders are both imperfect humans. that's beautiful! because it makes you realize that being a good tool user or builder is actually a skill you can learn and build
 
 :::
 
 
 ## Skill types
 
-. . .
-
 ::: incremental
 - "hard" skills: the computer elements
-    - modularity, portability, flexibility
+    - modularity, reproducibility, flexibility
 - "soft" skills: the human elements
     - knowing your user, understanding needs, delighting in the small things, explaining your work
 :::
@@ -140,15 +166,11 @@ I'm not interested in trying to convince you of one or the other is better, but 
 Really, I was thinking a lot about how to frame different ways to build tools and how to think of what is important.
 That's when I realized: there are two types of skills in tool building.
 
-Hard skills - these are the technical foundations. Modularity, so your tool plays well with others. Reproducibility, so things work consistently. Structure, so your code is maintainable. These skills get your tool to work.
+Hard skills in tool building and on a resume are both technical foundations. Modularity, so your tool plays well with others. Reproducibility, so things work consistently. Structure, so your code is maintainable. These skills get your tool to work.
 
 Soft skills - these are the human elements. Knowing your audience. Highlighting what people actually use. Letting little improvements have big impact. These skills get people to love your tool.
 
 Here's the thing: you need both.
-
-A tool with only hard skills is like a perfectly engineered car with no steering wheel. It works, but good luck using it.
-
-A tool with only soft skills is like a beautiful website that crashes when you click anything. It delights, until it doesn't.
 
 Today, we're going to explore both. Because the best tools - the ones that actually make data work better - nail both the technical foundation AND the human experience.
 
@@ -163,9 +185,29 @@ thinking about best practices of tools, helps to start with the
 
 # 1. Modularity
 
+## Modularity
+
+- Building from known projects
+- Allows tools to grow with users
+- Extension packages <3
+
 ::: notes
 -   when you build tools, build them from things that are known/scale
 -   finding tools that work with what you already know
+
+
+For tool builders:
+
+Expose clear interfaces/APIs-- people can make custom extensions to customize their experience. using a tool that is already accepted by the community and customizing allows you to focus on the pieces you want
+
+grow with users: (rodrigo's talk tomorrow morning and jules talk tomorrow morning)
+
+JULES TALK 9am tomorrow
+
+
+For tool users:
+
+Look for tools that play well with what you know
 
 :::
 
@@ -187,44 +229,32 @@ positron vscode fork
 -   gives users the ability to grow with the tool you've built
 -   OpenVSX extensions, which means everyone's Positron looks a little different
 
-
-For tool builders:
-
-Expose clear interfaces/APIs
-Make components swappable
-
-
-For tool users:
-
-Look for tools that play well with your existing stack
-Prefer tools with clear extension points
-
 :::
 
 
-# 2. Portability
+# 2. Reproducibility
 
 ::: notes
 ARTIFACT: The Waypoint Stones (Cross-platform compatibility)
 
 _Place these markers and teleport your work anywhere_
-
-does this code give you output that works in many places? 
-
 this
 ::: 
 
-## Portability: Quarto
+## Reproducibility
 
-{{ screenshot of quarto in rstudio/vscode/positron side by side}}
+- Data folks know how important this is!
+- Focus on the creation of reproducible artifacts
 
 ::: notes
-Example: Quarto works with Jupyter, VS Code, RStudio, Positron
+reproducibility is something we hear about a lot for data science
 
-Doesn't lock you into one ecosystem
+it is _integral_ for trustworthy science, but there is a strong pull for exploring data in 
+
+
 :::
 
-## Portability: Data Explorer
+## Reproducibility: Data Explorer
 
 ![](images/convert-to-code.gif){fig-align="center"}
 
@@ -233,7 +263,11 @@ big emphasis on a first-in-class data explorer
 
 astounding technical feat
 
+great for quick 
+
 able to convert filters to code at the click of a button 
+
+really interesting application of being able to bridge the gap between gui data science and reproducibility
 :::
 
 # 3. Flexibility {background-image="images/swiss-army-wand.JPG"}
@@ -270,8 +304,6 @@ if you have something accept complex inputs, it's going to be way harder to also
 
 ## Flexibility: Positron Assistant
 
-. . .
-
 ![](images/positron-assistant.gif){fig-align="center"}
 
 ::: notes
@@ -290,7 +322,7 @@ BUT start from a happy path and give users
 AI tools i think have really highlighted the importance of starting with a reasonable amount of context but letting users configure more or less information.
 :::
 
-# Modularity. Portability. Flexibility.
+# Modularity. Reproducibility. Flexibility.
 
 ::: notes
 three virtues of a good tool
@@ -316,18 +348,6 @@ Building great tools requires both: technical excellence + user empathy
 
 ## 2025: the era of AI everything
 
-![](images/mostly_ai.png){fig-align="center"}
-
-::: footer
-https://survey.stackoverflow.co/2025/ai#developer-tools-ai-tool
-:::
-
-::: notes
-Developers show the most resistance to using AI for high-responsibility, systemic tasks like Deployment and monitoring (76% don't plan to) and Project planning (69% don't plan to).
-:::
-
-## 2025: the era of AI everything
-
 ![](images/dont_plan_to_use_ai.png){fig-align="center"}
 
 ::: footer
@@ -336,6 +356,8 @@ https://survey.stackoverflow.co/2025/ai#developer-tools-dont-plan-to-use-ai-for-
 
 ::: notes
 Developers show the most resistance to using AI for high-responsibility, systemic tasks like Deployment and monitoring (76% don't plan to) and Project planning (69% don't plan to).
+
+planning is a lot of the soft skills -> things like deciding what is important, product knowledge
 :::
 
 # A tool's soft-skills (the human side)
@@ -362,11 +384,7 @@ Shows you the struggles of other wizards
 ::: notes
 data work inherently looks a little different than what we would consider a software engineer to work
 
-data is highly driven by exploration, experiments, iteration, exploring uncharted territories
-
-software engineering is highly driven by structure, perhaps a certain outcome (like a new button, etc)
-
-Data practitioners explore uncharted territories (iteration, experimentation), while software engineers build fortresses in known lands (structure, specific outcomes). You wouldn't give a cartographer a mason's tools. The permanent console is like having a magical campfire that's always burning—a place to test spells and try new incantations safely.
+Data practitioners explore uncharted territories (iteration, experimentation), while software engineers build fortresses in known lands (structure, specific outcomes). You wouldn't give a cartographer a mason's tools. 
 
 which means a tool that is built for a saoftware engineer might not be the best fit for someone who needs to do lots of exploring like a data scientist
 :::
@@ -382,12 +400,10 @@ This is a place where you can send code to be executed; if you're not familiar w
 
 You can use keyboard shortcuts like command or control enter to send code from a python script directly to the console, which allows you to
 
-there is also jupyter notebook support, but this dedicated area is highly flexible to work with python scripts, quarto documents, etc
-
 not only was it important to have an iterable console, we also made edits to the LSP (how your IDE is able to do things like give code completions and syntax highlighting)
 :::
 
-# 2. Understand what gets used, highlight that {background-image="images/lantern.png"}
+# 2. Emphasize discoverability {background-image="images/lantern-corner.png"}
 
 ::: notes
 ARTIFACT: The Path-Illuminating Lantern (discoverability)
@@ -397,9 +413,9 @@ Shines light on the trails most traveled
 honestly all other subsets of soft skills sort of fall out of the idea of knowing your users
 :::
 
-## Understand what gets used
+## Emphasize discoverability
 
--   Builders: bring to the front the things that frequently used
+-   Builders: Understand what gets used
 -   Users: find the tool that works best with your usual path
 
 ::: notes
@@ -407,10 +423,12 @@ disocverability is hard! on documentation, in the actual API, in the UI
 
 documentation helps! but it can be equally important to have self-documenting things.
 
-information is hard to find and retain, so the 
+information is hard to find and retain, so bringing to the front what actually gets used is really important
 :::
 
 ## Quarto: simple buttons
+
+![](images/quarto-buttons.png){fig-align="center"}
 
 ::: notes
 -   things that are high impact but hard to find (render on save was deep in settings)
@@ -419,7 +437,9 @@ information is hard to find and retain, so the
 
 - what do users care about, how can you help them find the things that are not immediately obvious
 
-Discoverability is the eternal quest. Hidden features are like secret passages—even if they lead to treasure, they're useless if no one finds them. "Render on save" was a legendary artifact buried in a settings dungeon; bringing it to the surface makes it actually usable.
+Discoverability is the eternal quest. Hidden features are like secret passages—even if they lead to treasure, they're useless if no one finds them. with something like "Render on save" ; bringing it to the surface makes it actually usable.
+
+we're looking to make ui changes to how our jupyter notebooks look to ease discoverability, and if you're interested in chatting, come say hi at the posit booth!
 :::
 
 # 3. Let little things have big impact {background-image="images/salve.png"}
@@ -427,7 +447,8 @@ Discoverability is the eternal quest. Hidden features are like secret passages�
 ::: notes
 ARTIFACT: The Papercut Healing Salve (small improvements)
 
-Death by a thousand papercuts is still death
+sometimes using a tool can feel like death by a thousand papercuts
+
 Each tiny improvement is a drop of healing potion
 
 i would love to do that, but how can i even find the little things?
@@ -436,16 +457,7 @@ do painful things, often
 
 -   great way to learn to do hard things
 -   great way to discover how to make things simpler
--   Quarto: open source authoring
--   how i made these slides, my website, dashboards
--   highlighting the things that are
-
-not something that is obviously painful, but death by 100000 papercuts
 :::
-
-## Big impact: keyboard shortcuts
-
-{{adding in jupyter keyboard shortcuts}}
 
 ## Big impact: run script
 
@@ -468,9 +480,13 @@ runs app according to framework like streamlit run appname
 # 4. Explain your work {background-image="images/crow.JPG"}
 
 ::: notes
-ARTIFACT: The Whispering Familiar (help pane)
+idea of a rubber duck in programming when you try to explain thing
 
 Perches on your shoulder, wise and patient
+
+Explaining your work is having a helper perched on your shoulder, ready to assist or take over your tasks.
+
+and here's the thing when you try to explain things....
 :::
 
 ## Explain your work 
@@ -480,8 +496,11 @@ Perches on your shoulder, wise and patient
 :::
 
 ::: notes
-try to explain it. 
-if you struggle to explain, probably a good signal that it can be confusing to users as well!
+from the zen of python
+
+helpful for handoff of work, collaborating with others, but selfishly...
+
+having clarity on the code your are writing will supercharge your own ability to comprehend and build it.
 :::
 
 ## Explain your work
@@ -489,17 +508,16 @@ if you struggle to explain, probably a good signal that it can be confusing to u
 ![](images/bluesky.jpeg){fig-align="center"}
 
 ::: notes
-now, the original context of this is literary, but i think its really a helpful framing
+now, the original context of this is literary, but i think its really a helpful framing.
 
-if you're documenting your function by adding types
+if you're looking at a new package, seeing if there is not only API documentation but also examples, maybe a getting started guide
 
 if you're adding docstrings to functions
 
-if you're 
-
 all of this helps give your users (including yourself) better information when you're using a tool
 
-The help pane is like having a wise familiar perched on your shoulder, ready to whisper the secrets of any incantation you point at. Writing for AI is like leaving notes for a very literal apprentice who will take you absolutely seriously.
+add types to your functions.
+types are not _necessary_ in Python, but if you are able to write down your intensions, it's way easier for you and others to understand intent!
 :::
 
 ## Explain your work: help pane
@@ -512,13 +530,11 @@ the hard part is sometimes surfacing this information later.
 Something we really wanted to focus on is bringing rich api documentation closer to users, so they don't have to leave the IDE to find information they need (and that probably they already have, it's just hard to find!)
 
 we built out a help pane, that has navigation, rich highlighting, linked docs. 
+support numpy, sphinx, google, and epytext style docstrings
 
 so users can just write their function or object name with a question mark in the console and immediately see information they need. 
 
 helps users, helps builders by narrowing the feedback loop between the two
-
-support numpy, sphinx, google, and epytext style docstrings
-
 
 docs are a good place to write things down, but sometimes it feels like too formal of a place to add brainstorming or half baked explanations
 :::
@@ -552,72 +568,55 @@ doesnt have to be as polished as public documentation, but still beneficial to m
 
 # Holistic tools
 
-# A mission to have beautiful tools {background-image="images/tools.JPG"}
+## A mission to have beautiful tools {background-image="images/tools.png"}
+
+- Considering the input and output of your work
+- Take on complexity to make a user's life easier
 
 ::: notes
 ARTIFACT: The Mission Compass (Posit's philosophy)
-
 Always points toward "beautiful tools"
 
-caring deeply about the input and output of your work
+-> what tools are you using? are they compatible with each other? 
 
-willing to take on complexity to make a user's life easier
+-> think critically about your use case, is there a way to bridge them together or extend them specifically to better fit your use case? (JULES talk about extension packages)
 
-literally on our about page!
 :::
 
-# Feedback loops {background-image="images/oroborus.JPG"}
+## Feedback loops {background-image="images/oroborus.png"}
+
+- Use tools 
+- Notice pain points 
+- Share with others
 
 ::: notes
-ARTIFACT: The Feedback Loop Ouroboros (continuous improvement)
-
-A serpent eating its tail, endlessly cycling
-
 Use tools → Notice pain points → Build better tools → Share with others
 This is how the ecosystem improves
 You're both a consumer and contributor
 Your unique perspective matters
+
+Building tools isn't about reaching a final destination (the perfect IDE, the ultimate package). It's about the hero's journey that never ends—using tools reveals what's needed, building reveals what's possible, and sharing starts the cycle anew.
 :::
 
 # Your most powerful tool: your voice!
 
 ::: notes
-ARTIFACT: The Voice Amplification Horn
-Blog posts become battle cries
+Every great tool starts as someone's story of frustration and triumph.
 
 Blog posts, conference talks, GitHub issues, linkedin posts
+
 Sharing what works (and what doesn't) helps everyone
+
 Your feedback makes tools better
 Your tools make others' work better
 This is the adventure: The continuous cycle of building and using
 
-
-Every great tool starts as someone's story of frustration and triumph. When you write that blog post or file that GitHub issue, you're not just complaining—you're adding verses to the collective epic. Future tool-builders will sing your songs (read your posts) and build better magic because you shared your journey.
-:::
-
-# Building your toolkit {background-image="images/bag.JPG"}
-
-::: notes
-- Start with modular, composable tools
-- Pay attention to what delights you (and what frustrates you)
-- Your toolkit should evolve as you do
-- You're not building for everyone - build for someone
-- Every delightful moment counts
-- Small improvements compound over time
-
-if i was getting into the business of making cheesy motivational posters for data folks, i'd probably start here.
-
-Building tools isn't about reaching a final destination (the perfect IDE, the ultimate package). It's about the hero's journey that never ends—using tools reveals what's needed, building reveals what's possible, and sharing starts the cycle anew.
 :::
 
 ## What makes tools stick?
 
-Not perfection, but:
-
-1. Solving a real problem (hard skills)
-2. Making the experience enjoyable (soft skills)
-3. Deep caring for users (mission)
-
+- The hard skills: modularity, reproducibility, flexibility
+- The soft skills: Knowing your users, emphasizing discoverability, building little things for big impact, explaining your work
 
 ## _thank you!_
 
